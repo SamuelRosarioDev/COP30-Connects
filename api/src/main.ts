@@ -1,13 +1,9 @@
 // Import the framework and instantiate it
 import Fastify from 'fastify'
-const fastify = Fastify({
-  logger: true
-})
+import { routes } from './routes/index.ts';
+const fastify = Fastify({ logger: true })
 
-// Declare a route
-fastify.get('/', async function handler (request, reply) {
-  return { hello: 'world' }
-})
+await fastify.register(routes, { prefix: '/api' });
 
 // Run the server!
 try {
