@@ -14,7 +14,7 @@ O sistema permite:
 
 O diagrama abaixo ilustra a estrutura do nosso banco de dados, mostrando as entidades e seus relacionamentos. Ele foi desenhado para ser escalável e suportar a complexidade do evento.
 
-![Diagrama do Banco de Dados](./ERD.png)
+![Diagrama do Banco de Dados](https://github.com/user-attachments/assets/45de910a-44d3-46bb-af4c-4ebb46a2afe1)
 
 ## 🚀 Como Executar o Projeto
 
