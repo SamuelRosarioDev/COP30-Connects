@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_cop30connects
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: cop30connects
+      POSTGRES_PASSWORD: cop30connects
+      POSTGRES_DB: cop30connects
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pg_data:
