@@ -1,18 +1,8 @@
-// Import the framework and instantiate it
-import Fastify from 'fastify'
-const fastify = Fastify({
-  logger: true
-})
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
-// Declare a route
-fastify.get('/', async function handler (request, reply) {
-  return { hello: 'world' }
-})
-
-// Run the server!
-try {
-  await fastify.listen({ port: 3000 })
-} catch (err) {
-  fastify.log.error(err)
-  process.exit(1)
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  await app.listen(process.env.PORT ?? 3000);
 }
+bootstrap();
