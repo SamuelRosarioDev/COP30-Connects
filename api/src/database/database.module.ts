@@ -1,6 +1,7 @@
 import { Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
+import { User } from './entities/user.entity';
 
 @Module({
     imports: [
@@ -11,6 +12,7 @@ import { DataSource } from 'typeorm';
             username: 'cop30connects',
             password: 'cop30connects',
             database: 'cop30connects',
+            entities: [User],
             synchronize: true,
         }),
     ],
